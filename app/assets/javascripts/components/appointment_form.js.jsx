@@ -12,7 +12,18 @@ var AppointmentForm = createReactClass({
     this.props.onFormSubmit();
   },
 
+  setAppTime: function(e) {
+    var name = 'appt_time';
+    var obj = {};
+    if (obj[name] = e.toDate()) {
+      this.props.onUserInput(obj);
+    }
+  },
+
   render: function() {
+    var inputProps = {
+      name: 'appt_time' 
+    };
     return (
       <React.Fragment>
         <div>
@@ -23,11 +34,18 @@ var AppointmentForm = createReactClass({
                       value={this.props.title} 
                       onChange={this.handleChange} />
               
+              {/*               
               <input  name="appt_time" 
                       placeholder="Date and time" 
                       value={this.props.appt_time}
                       onChange={this.handleChange} />
+              */}
               
+              <Datetime inputProps={inputProps}
+                        value={this.props.appt_time}
+                        open={true}
+                        input={false}
+                        onChange={this.setAppTime}/>
               <input type="submit" value="make appointment" />
             </form>
         </div>
