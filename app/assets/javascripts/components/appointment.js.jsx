@@ -5,7 +5,7 @@ var Appointment = createReactClass({
       <React.Fragment>
         <div>
           <h3>{this.props.appointment.title}</h3>
-          <p>{this.props.appointment.appt_time}</p>
+          <p>{formatDate(this.props.appointment.appt_time)}</p>
         </div>
       </React.Fragment>
     );
