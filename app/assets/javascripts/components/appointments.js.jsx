@@ -5,6 +5,7 @@ var Appointments = createReactClass({
       <React.Fragment>
         
         <div>
+          <AppointmentForm />
           {this.props.appointments.map(function(appointment){
             return(
             <Appointment appointment={appointment} />
