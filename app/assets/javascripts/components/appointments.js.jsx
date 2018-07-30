@@ -3,9 +3,13 @@ var Appointments = createReactClass({
   getInitialState: function() {
     return {
       appointments: this.props.appointments,
-      input_title: 'Medo do escuro',
-      input_appt_time: ''
+      title: 'Medo do escuro',
+      appt_time: ''
     }
+  },
+
+  handleUserInput: function (obj){
+    this.setState(obj);
   },
 
   render: function() {
@@ -14,8 +18,9 @@ var Appointments = createReactClass({
         
         <div>
           <AppointmentForm 
-            input_title={this.state.input_title} 
-            input_appt_time={this.state.input_appt_time}  
+            input_title={this.state.title} 
+            input_appt_time={this.state.appt_time}
+            onUserInput={this.handleUserInput}  
           />
 
           <AppointmentsList 
