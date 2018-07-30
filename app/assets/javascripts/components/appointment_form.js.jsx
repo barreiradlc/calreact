@@ -7,12 +7,17 @@ var AppointmentForm = createReactClass({
     this.props.onUserInput(obj);
   },
 
+  handleSubmit: function(e) {
+    e.preventDefault();
+    this.props.onFormSubmit();
+  },
+
   render: function() {
     return (
       <React.Fragment>
         <div>
           <h2>make a new appointment</h2>
-            <form>
+            <form onSubmit={this.handleSubmit}>
               <input  name="title" 
                       placeholder="Alimentar Letício" 
                       value={this.props.input_title} 
